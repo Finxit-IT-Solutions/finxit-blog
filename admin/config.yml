@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: Finxit-IT-Solutions/finxit-blog
+  branch: main
+  base_url: https://sveltia-cms-auth.office-f07.workers.dev
+
+media_folder: "images/posts/"
+collections:
+  - name: "blog"
+    label: "Blog Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Author", name: "author", widget: "string" }
