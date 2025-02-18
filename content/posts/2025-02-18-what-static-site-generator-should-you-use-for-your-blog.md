@@ -19,7 +19,7 @@ After some problems with the `ruby` setup (I'm using the [`fish`](https://fishsh
 
 However, something simply didn't feel exactly right with me. I can't really explain it, some parts felt a little bit outdated. A lot of the available free templates, for example, hadn't had any recent commits, sometimes for years. And as I wasn't to happy with my theme selection any way, I decided to explore more options.
 
-Don't get me wrong: `Jekyll` is by no means dead. It probably still is a fantastic static side generator, and if you are happy with it, you have no reason to migrate away from it.
+Don't get me wrong: `Jekyll` is by no means dead. It still is a fantastic static side generator, and if you are happy with it, you have no reason to migrate away from it.
 
 ### Introducing Hugo
 
@@ -41,6 +41,7 @@ Remember when I said no fancy stuff? Well I went a little bit fancy. Having a CM
 Last but not least, Sveltia CMS needs to be configured to edit / save the correct files. The documentation is the biggest drawback at the moment, as it mostly simply doesn't exist. However, as Sveltia CMS is a drop-in replacement for Decap CMS, you can use their [documentation](https://decapcms.org/docs/intro/).
 
 I went with the following configuration (add to `hugo.toml`). If you want to use it like that, you need to replace some values like `site_url`, `repo` or `base_url`. Check out the links at the end of the post for the used tutorials / guides.
+
 ```toml
   [params.headless_cms]
     engine = "sveltia"
@@ -94,6 +95,7 @@ I went with the following configuration (add to `hugo.toml`). If you want to use
 ### Technical details
 
 I used the following combination of frameworks, tools and services:
+
 - [Hugo](https://gohugo.io/)
 - [Maverick Theme](https://themes.gohugo.io/themes/maverick/)
 - [Headless CMS Hugo Module](https://github.com/privatemaker/headless-cms)
