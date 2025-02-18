@@ -7,7 +7,7 @@ Hello and welcome to my new blog. Let's kick it of with a technical introduction
 
 The amount of possible technologies to start a blog is sheer unlimited. It was quite clear for me, it needs to be something _simple_. With simple, I mean no database or any fancy stuff involved. I'm hear to spread my word, the content doesn't change every second, so we don't need a database. No Wordpress on my watch. Also, I don't need any complex frontend, that involves a lot of JavaScript. What happened with simple HTML?
 
-Any way, I'm drifting off. Blog. Simple. HTML. ideally managed in some kind of Git repository. Requirements check.
+Any way, I'm drifting off. Blog. Simple. Static HTML. ideally managed in some kind of Git repository. Requirements check.
 
 Now the strange part: I had never used a static site generator before. Don't ask me how that happened. My main company website for [Finxit](https://www.finxit.at/) runs on (kinda) static HTML. That content doesn't change often, has no sub pages, so I simply never needed static site generators. If you want to run a blog, however, that obviously changes.
 
