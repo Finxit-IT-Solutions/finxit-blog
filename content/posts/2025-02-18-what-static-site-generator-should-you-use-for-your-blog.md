@@ -25,7 +25,7 @@ Don't get me wrong: `Jekyll` is by no means dead. It still is a fantastic static
 
 I can't remember exactly, how I learned about [Hugo](https://gohugo.io/), but it was my next contender on the list.
 
-Reddit had a split opinion on this. You can't tell me that is not the same person.
+Reddit had a split opinion on this. You can't tell me that they are not the same person.
 ![Two people on Reddit exclusively recommending Jekyll and Hugo](/assets/posts/reddit_opinion_jekyll_hugo.png "You can't tell, that this is not the same person")
 
 So I gave `Hugo` a try, and honestly, it felt a lot better. One pro argument you often read about `Hugo` is, that is better for big sites, like 1k pages+. However, that speed benefit trickles down to very small sites too. `hugo server` starts instantly for me, while `bundle exec jekyll serve` took a couple seconds for only two pages. This might not sound like a lot, but each change, each hot reload took a couple of seconds, so this was a huge improvement.
