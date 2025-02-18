@@ -1,0 +1,105 @@
+baseURL = 'https://blog.finxit.at/'
+languageCode = 'en-uk'
+title = 'Finxit IT Solutions Blog'
+theme = 'maverick'
+
+[permalinks]
+  pages = "/:slug"
+
+[module]
+  [module.imports]
+    path = "github.com/privatemaker/headless-cms"
+
+[params]
+  logo = '/assets/favicon.ico'
+  description = "Blog of Christian Schabetsberger, a Freelance Software Engineer & Software Architect, sharing his experiences at Finxit IT Solutions."
+  author = 'Christian Schabetsberger'
+  items = 10
+
+  [params.comments]
+    enabled = false
+    githubRepo = 'Finxit-IT-Solutions/finxit-blog'
+    theme = 'github-light'
+
+  [params.headless_cms]
+    engine = "sveltia"
+    site_url = "https://blog.finxit.at"
+    media_folder = "static/assets/" # use static folder, till I figured out the asset pipeline
+
+    [params.headless_cms.backend]
+      name = "github"
+      repo = "Finxit-IT-Solutions/finxit-blog"
+      branch = "main"
+      base_url = "https://sveltia-cms-auth.office-f07.workers.dev"
+
+    [params.headless_cms.collections.blog]
+      name = "blog"
+      label = "Blog Post"
+      create = true
+      folder = "content/posts"
+      slug = "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+      [params.headless_cms.collections.blog.sortable_fields]
+        fields = ["title", "date"]
+
+        [params.headless_cms.collections.blog.sortable_fields.default]
+          field = "date"
+          direction = "descending"
+
+      [[params.headless_cms.collections.blog.fields]]
+        label = "Title"
+        name = "title"
+        widget = "string"
+
+      [[params.headless_cms.collections.blog.fields]]
+        label = "Date"
+        name = "date"
+        widget = "datetime"
+        default = "{{now}}"
+        format = "YYYY-MM-DDTHH:mm:ssZ"
+
+      [[params.headless_cms.collections.blog.fields]]
+        label = "Body"
+        name = "body"
+        widget = "markdown"
+
+      [[params.headless_cms.collections.blog.fields]]
+        label = "Draft"
+        name = "draft"
+        widget = "boolean"
+        default = true
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "https://www.finxit.at/"
+    weight = -110
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = -200
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = 'nord'
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON", "HeadlessCMSConfig"]
+  section = ["HTML"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss"
+  baseName = "atom"
+
+[outputFormats.JSON]
+  mediatype = "application/json"
+  baseName = "feed"
+
+ignoreErrors = ["error-remote-getjson"]
