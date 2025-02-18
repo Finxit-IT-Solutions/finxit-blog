@@ -19,7 +19,7 @@ After some problems with the `ruby` setup (I'm using the [`fish`](https://fishsh
 
 However, something simply didn't feel exactly right with me. I can't really explain it, some parts felt a little bit outdated. A lot of the available free templates, for example, hadn't had any recent commits, sometimes for years. And as I wasn't to happy with my theme selection any way, I decided to explore more options.
 
-Don't get me wrong: `Jekyll` is by no means dead. It still is a fantastic static side generator, and if you are happy with it, you have no reason to migrate away from it.
+Don't get me wrong: `Jekyll` is by no means dead. It still is a fantastic static site generator, and if you are happy with it, you have no reason to migrate away from it.
 
 ### Introducing Hugo
 
