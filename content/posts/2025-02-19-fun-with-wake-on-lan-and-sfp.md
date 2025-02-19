@@ -17,7 +17,7 @@ Today was finally the day to investigate it. It was exactly the kind of debuggin
 
 However, now I was confident and curious: can I also make it work with the `10G` Marvell network card? While having two network cables to my workstation is no biggie, it is still quite unnecessary (yes I'm still using my `10G` Marvell card mainly - bite me). After more debugging, switching cables and ports etc. I realized: the network card is not the problem, it works just fine. However, the network port on my router seems to be the problem.
 
-You see, my router, an Unifi Dream Machine Pro, doesn't have a native `10G` `RJ45` port, but it has a `SFP+` module slot. And that's where the problem is: my `SFP+` to `RJ45` module does not support Fast Ethernet, which is used when the system is in S5 mode (shutdown). So the uplink - at least from the point of view of the router - was down. A particularly misleading detail: the LEDs on the network card were still on, so I just _assumed_, that there would be an uplink.
+You see, my router, an Unifi Dream Machine Pro, doesn't have a native `10G` `RJ45` port, but it has a `SFP+` module slot. Thanks to [this thread](https://community.ui.com/questions/WoL-packets-blocked-by-SFP-port-on-a-US-8-150W/dd5e9ed2-a3da-488a-93fb-4f8817bd0510), which gave the correct hint that the module is the problem: my `SFP+` to `RJ45` module does not support Fast Ethernet, which is used when the system is in S5 mode (shutdown). So the uplink - at least from the point of view of the router - was down. A particularly misleading detail: the LEDs on the network card were still on, so I just _assumed_, that there would be an uplink.
 
 ### The solution now?
 
