@@ -3,15 +3,15 @@ title: What static site generator should you use for your blog?
 date: 2025-02-18T02:19:00+01:00
 draft: false
 ---
-Hello and welcome to my new blog. Let's kick it of with a technical introduction. (TL;DR at the end)
+Hello and welcome to my new blog. Let's kick it off with a technical introduction. (TL;DR at the end)
 
-The amount of possible technologies to start a blog is sheer unlimited. It was quite clear for me, it needs to be something _simple_. With simple, I mean no database or any fancy stuff involved. I'm hear to spread my word, the content doesn't change every second, so we don't need a database. No Wordpress on my watch. Also, I don't need any complex frontend, that involves a lot of JavaScript. What happened with simple HTML?
+The amount of possible technologies to start a blog is sheer unlimited. It was quite clear for me, it needs to be something _simple_. With simple, I mean no database or any fancy stuff involved. I'm here to spread my word, the content doesn't change every second, so we don't need a database. No Wordpress on my watch. Also, I don't need any complex frontend, that involves a lot of JavaScript. What happened with simple HTML?
 
-Any way, I'm drifting off. Blog. Simple. Static HTML. ideally managed in some kind of Git repository. Requirements check.
+Any way, I'm drifting off. Blog. Simple. Static HTML. Ideally managed in some kind of Git repository. Requirements check.
 
-Now the strange part: I had never used a static site generator before. Don't ask me how that happened. My main company website for [Finxit](https://www.finxit.at/) runs on (kinda) static HTML. That content doesn't change often, has no sub pages, so I simply never needed static site generators. If you want to run a blog, however, that obviously changes.
+Now, the strange part: I had never used a static site generator before. Don't ask me how that happened. My main company website for [Finxit](https://www.finxit.at/) runs on (kinda) static HTML. That content doesn't change often, has no sub-pages, so I simply never needed static site generators. If you want to run a blog, however, that obviously changes.
 
-So I started to take a look into the world of static site generators, and - oh boy - are there many options. And half of them are JavaScript. Remember: no fancy client side shenanigans here. If your are looking for that, then this blog post is not the correct one for you.
+So I started to take a look into the world of static site generators, and - oh boy - are there many options. And half of them are JavaScript. Remember: no fancy client side shenanigans here. If you are looking for that, then this blog post is not the correct one for you.
 
 ### The beginnings
 
@@ -30,13 +30,13 @@ Reddit had a split opinion on this. You can't tell me that they are not the same
 
 So I gave `Hugo` a try, and honestly, it felt a lot better. One pro argument you often read about `Hugo` is, that is better for big sites, like 1k pages+. However, that speed benefit trickles down to very small sites too. `hugo server` starts instantly for me, while `bundle exec jekyll serve` took a couple seconds for only two pages. This might not sound like a lot, but each change, each hot reload took a couple of seconds, so this was a huge improvement.
 
-Further more, `Hugo` comes with a lot of stuff build in, where you would need plugins with `Jekyll`. On the downside: it doesn't support plugins at all. However, I was still able to integrate the `sveltia-cms` via a [`Hugo` module](https://github.com/privatemaker/headless-cms). No idea what that is, but it works really well.
+Furthermore, `Hugo` comes with a lot of stuff build in, where you would need plugins with `Jekyll`. On the downside: it doesn't support plugins at all. However, I was still able to integrate the `sveltia-cms` via a [`Hugo` module](https://github.com/privatemaker/headless-cms). No idea what that is, but it works really well.
 
 From a technical point of view: `Hugo` uses `Go templates` as it's templating engine, which might be a benefit if you are doing a lot of Cloud Native stuff and are already familiar with it. `Jekyll` - in comparison - uses liquid, which was created by Shopify. (TIL)
 
 ### The CMS to rule the Git(Hub) repo
 
-Remember when I said no fancy stuff? Well I went a little bit fancy. Having a CMS is still a major benefit for blogging, especially on mobile. Fortunately, [Dylan Beattie blogged about Sveltia CMS just a couple of days ago](https://dylanbeattie.net/2025/02/13/sveltiacms-jekyll-and-github-pages.html), and I really liked it. `sveltia-cms` is a headless CMS (no backend*), that will simply push your changes into your Git repo. Did I say no backend? Well almost no backend. (Un)fortunately you only need a [Cloudflare worker](https://github.com/sveltia/sveltia-cms-auth) for the OAuth Authentication with GitHub.
+Remember when I said no fancy stuff? Well, I went a little bit fancy. Having a CMS is still a major benefit for blogging, especially on mobile. Fortunately, [Dylan Beattie blogged about Sveltia CMS just a couple of days ago](https://dylanbeattie.net/2025/02/13/sveltiacms-jekyll-and-github-pages.html), and I really liked it. `sveltia-cms` is a headless CMS (no backend*), that will simply push your changes into your Git repo. Did I say no backend? Well, almost no backend. (Un)fortunately you only need a [Cloudflare worker](https://github.com/sveltia/sveltia-cms-auth) for the OAuth Authentication with GitHub.
 
 Last but not least, Sveltia CMS needs to be configured to edit / save the correct files. The documentation is the biggest drawback at the moment, as it mostly simply doesn't exist. However, as Sveltia CMS is a drop-in replacement for Decap CMS, you can use their [documentation](https://decapcms.org/docs/intro/).
 
