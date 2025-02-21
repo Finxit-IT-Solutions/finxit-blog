@@ -1,6 +1,7 @@
 ---
 title: 'What difference does LeetCode make in your hiring process?'
 date: '2025-02-21'
+draft: true
 ---
 
 Everything. You will miss out on good developers based on stupid, non-business related coding challenges. There I said it: doing LeetCode challenges in your hiring process is stupid.
