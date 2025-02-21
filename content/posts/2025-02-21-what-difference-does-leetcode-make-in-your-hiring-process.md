@@ -3,11 +3,11 @@ title: 'What difference does LeetCode make in your hiring process?'
 date: '2025-02-21'
 ---
 
-Everything. You will miss out on good developers based on stupid, non business related coding challenges. There I said it: doing LeetCode challenges in your hiring process is stupid.
+Everything. You will miss out on good developers based on stupid, non-business related coding challenges. There I said it: doing LeetCode challenges in your hiring process is stupid.
 
 I never experienced a company doing that here in Austria, for me, that was mostly an American thing so far. But there is a first time for everything. I recently interviewed for a new project and they gave me three "coding challenges". No biggie, I have done coding challenges before. However, what I did not expect where the following three tasks:
 
-- Write an algorithm, that generates all possible parenthese combinations.
+- Write an algorithm, that generates all possible parentheses combinations.
 - Implement your own linked list.
 - Implement your own binary search.
 
@@ -15,7 +15,7 @@ And all of that in 60 minutes.
 
 ## Parentheses madness
 
-All combinations of parenthese obviously required dynamic programming. And while I'm a vivid [Advent of Code](https://adventofcode.com/) enjoyer, this is not something I ever needed in my professional work. Recursion is hard, especially under time pressure. And I absolutely failed the challenge.
+All combinations of parentheses obviously required dynamic programming. And while I'm a vivid [Advent of Code](https://adventofcode.com/) enjoyer, this is not something I ever needed in my professional work. Recursion is hard, especially under time pressure. And I absolutely failed the challenge.
 
 ## The linked list to rule them all
 
