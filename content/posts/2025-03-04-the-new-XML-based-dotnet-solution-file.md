@@ -61,7 +61,7 @@ First, you need at least version `9.0.200` of the .NET SDK. It isn't specificall
 
 What's that, you want support in your favourite IDE? Oh okay.
 
-### VisualStudio
+### Visual Studio
 
 At the time of writing this, the support for `slnx` files in Visual Studio is hidden behind a preview toggle.\
 You can enable support under `Tools` → `Options` → `Environment` → `Preview Features` → `Use Solution File Persistence Model`.
