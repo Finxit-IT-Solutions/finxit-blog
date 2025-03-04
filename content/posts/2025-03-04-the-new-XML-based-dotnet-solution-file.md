@@ -57,7 +57,7 @@ See for yourself:
 ```
 ## Prerequisites
 
-First, you need at least version `9.0.200` .NET SDK. It isn't specifically mentioned in any release notes yet, but it was part of the [`9.0.200-preview` release notes](https://github.com/dotnet/core/blob/main/release-notes/9.0/9.0.0/9.0.200-preview.md). And that's it, the `dotnet` command now supports `slnx` solution files.
+First, you need at least version `9.0.200` of the .NET SDK. It isn't specifically mentioned in any release notes yet, but it was part of the [`9.0.200-preview` release notes](https://github.com/dotnet/core/blob/main/release-notes/9.0/9.0.0/9.0.200-preview.md). And that's it, the `dotnet` command now supports `slnx` solution files.
 
 What's that, you want support in your favourite IDE? Oh okay.
 
