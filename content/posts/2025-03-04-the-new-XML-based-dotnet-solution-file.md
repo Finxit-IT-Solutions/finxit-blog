@@ -100,7 +100,7 @@ Rider will then automatically ask you, if you want to load that new solution.
 
 ## Conclusion & Future
 
-I love the new format. It is simple, it is readable. Just a very similar improvement as with the old `csproj` and the new one. And it will probably the new default very soon.
+I love the new format. It is simple, it is readable. Just a very similar improvement as with the old `csproj` and the new one. And it will probably be the new default very soon.
 
 James Montemagno, a Principal Manager at Microsoft mentioned as a comment on the [.NET February 2025 servicing releases updates blog post](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-february-2025-servicing-updates/), that there is more to come for the `.slnx` format in the future:
 ![James Montemagno, a Principal Manager at Microsoft mentioned there is more to come](/assets/posts/slnx-microsoft-blog.png)
