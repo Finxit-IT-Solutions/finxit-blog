@@ -83,7 +83,7 @@ This one is already in the [official documentation](https://learn.microsoft.com/
 
 Unfortunately, Visual Studio doesn't have a simple right click migrate option, as like for similar migrations in the past.
 
-The way to go: `File` → `Save <Solution>.sln as` → Select `XML Solution (*.slnx)` as `Save as type`.
+The way to go: Select the solution file in the Solution Explorer, then `File` → `Save <Solution>.sln as` → Select `XML Solution (*.slnx)` as `Save as type`.
 
 ![Save <Solution>.sln as](/assets/posts/slnx-visual-studio-1.png)
 ![XML Solution (*.slnx)](/assets/posts/slnx-visual-studio-2.png)
