@@ -27,7 +27,7 @@ If you want to disable the telemetry for just the new Microsoft Testing Platform
 
 If you want to disable all the .NET telemetry, set `DOTNET_CLI_TELEMETRY_OPTOUT` to `1`.
 
-As it heavily depends on the operating system and the used shell, I'll leave out how to exactly to that, as there are simply to many options available. Your favourite search engine will help you out.
+As it heavily depends on the operating system and the used shell, I'll leave out how to exactly do that, as there are simply to many options available. Your favourite search engine will help you out.
 
 Unfortunately, there is no way like in Angular, where the opt out can simply be checked into the repository with `"analytics": false` as part of the `angular.json`. It can only be done via the environment variables. [Honi soit qui mal y pense](https://en.wikipedia.org/wiki/Honi_soit_qui_mal_y_pense).
 
