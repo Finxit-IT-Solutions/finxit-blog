@@ -19,7 +19,7 @@
     {{ $styles := resources.Get "scss/styles.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
     {{ $styles_extra := resources.Get "scss/_extra.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
     <style>{{ $styles.Content | safeCSS }} {{ $styles_extra.Content | safeCSS }}</style>
-  
+
     {{ if .IsHome -}}
   <script type="application/ld+json">
   {
@@ -33,7 +33,7 @@
   }
   </script>
   {{ else if .IsPage }}
-  {{ $author :=  or (.Params.author) (.Site.Author.name) }}
+  {{ $author :=  or (.Params.author) (.Site.Params.Author) }}
   {{ $org_name :=  .Site.Title }}
   <script type="application/ld+json">
   {
@@ -86,5 +86,5 @@
   }
   </script>
   {{ end }}
-  
+
   </head>
