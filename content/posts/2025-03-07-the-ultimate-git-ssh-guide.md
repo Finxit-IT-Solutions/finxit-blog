@@ -81,7 +81,7 @@ This can be done with `git remote set-url origin <url>`. Verify your remote URLs
 
 ## Yes, I did this
 
-A best practice for Git is signing commits. It basically confirms, that yes, **you**, have actually created this commit. Azure DevOps again doesn't support this (read as: it doesn't show nor verify it), but it also doesn't do any harm. Other services like GitHub actually verify the signing of commits and display a "Verified" badge next to the commit, if configured.
+A best practice for Git is signing commits. It basically confirms, that yes, **you**, have actually created this commit. Azure DevOps again doesn't support this (read as: it doesn't show nor verify it), but it also doesn't do any harm. Other services like GitHub actually verify the signing of commits and display a “Verified” badge next to the commit, if configured.
 
 Recent Git versions not only support GPG for signing, but also SSH keys. So let's do that!
 
