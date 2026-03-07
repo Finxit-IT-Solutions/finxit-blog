@@ -8,6 +8,7 @@
     {{ partial "header.html" . }}
     <section>
       <h2 class="post">{{ .Title }}</h2>
+      <em>{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</em>
       {{ .Content }}
       {{ if ne .Section "pages" }}
       <div class="post-date">
