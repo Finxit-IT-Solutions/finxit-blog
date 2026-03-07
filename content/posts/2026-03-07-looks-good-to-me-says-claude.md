@@ -82,7 +82,7 @@ In my opinion it is also quite funny that the LLM that wrote the code finds issu
 
 This one was the start, and it horribly failed in multiple ways. In all fairness, in the end Claude was able to fix it, but it took many, Many, MANY iterations, burning through tokens. It took 2-3 “sessions” (read: till Anthropic decides you used enough tokens) to actually solve this one, and I had to crank up the model Opus 4.6 with intensive thinking, burning even more tokens.
 
-The problem was that the `SpaProxy` simply works differently out-of-the-box by not proxying but actually forwarding to the Angular application. So different URLs (because different ports), the backend was on `HTTPS`, frontend only on `HTTP`, because there was no setup for `HTTPS`, resulting in all kinds of CORS errors and configuration issues. And as LLMs are good at creating what is likely  correct, that is not something that works very well with configuration that simply **needs** to be correct.
+The problem was that the `SpaProxy` simply works differently out-of-the-box by not proxying but actually forwarding to the Angular application. So different URLs (because different ports), the backend was on `HTTPS`, frontend only on `HTTP`, because there was no setup for `HTTPS`, resulting in all kinds of CORS errors and configuration issues. And as LLMs are good at creating what is likely correct, that is not something that works very well with configuration that simply **needs** to be correct.
 
 None of this was accounted for by the _technical architect_, and I assume that's the primary reason why the implementation failed so hard.
 
@@ -128,7 +128,7 @@ As I specifically asked for refactoring and modernization efforts, those things 
 
 ## Bonus: a customer application
 
-After these tests, I decided it was time to give it a chance to work on a real project: basically a small additional API endpoint + a new button in the frontend to call it. I did not expect this one to fail, because it was a really easy change, and functionality-wise, it was actually fine, but what killed it was an XML resource file.
+After these tests, I decided it was time to give it a chance to work on a real project: basically, a small additional API endpoint + a new button in the frontend to call it. I did not expect this one to fail, because it was a really easy change, and functionality-wise, it was actually fine, but what killed it was an XML resource file.
 
 The thing is, the application language is German, but all strings are in `XML` resource files so that we could add translations at any point. And as it contains German strings, and me being a big advocate of proper typography, the file contained a lot of strings using German quotation marks („“) instead of the “normal” double quotation marks ("").
 
@@ -140,7 +140,7 @@ Maybe we should add support for German quotation marks and Guillemets in `XML`?
 
 Okay, time for the conclusion!
 
-I have to agree, LLMs got a lot better at doing coding work since the last time I took a serious look at them. But on the other side, they are still far from being perfect, very far from AGI and also quite a bit away from being real autonomous. In my tests, it still required a lot of human-in-the-loop, but that part shifted heavily from the implementation part to the specification part. Again, they can't “think”, but they work well with very, very detailed instructions, so this makes perfect sense.
+I have to agree, LLMs got a lot better at doing coding work since the last time I took a serious look at them. But on the other side, they are still far from being perfect, very far from AGI and also quite a bit away from being really autonomous. In my tests, it still required a lot of human-in-the-loop, but that part shifted heavily from the implementation part to the specification part. Again, they can't “think”, but they work well with very, very detailed instructions, so this makes perfect sense.
 
 All in all, I, however, cannot support claims like 5–7 hours of “autonomous capacity”, as I have seen these days online. The whole workflow still required a lot of intervention in my experiments. Subagents may be part of the answer here, though.
 
