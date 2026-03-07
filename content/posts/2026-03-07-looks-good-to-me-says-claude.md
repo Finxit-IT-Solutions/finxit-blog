@@ -1,10 +1,10 @@
 ---
 title: 'Looks Good To Me (Says Claude)'
 date: '2026-03-07'
-draft: true
+draft: false
 ---
 
-The past week, I have been tampering a lot with Claude Code, well, at least till I ran out of tokens. Now I'm back to meat-produced code (that's when you use the ~1400g heavy slug in our head, which is accidentally the most complex object in the known universe) —* till my weekly limit resets.
+The past week, I have been tampering a lot with Claude Code, well, at least till I ran out of tokens. Now I'm back to meat-produced code (that's when you use the ~1400g heavy slug in our head, which is accidentally the most complex object in the known universe) —* till my weekly token limit resets.
 
 _* Yes, this is a human-produced em dash, simply because I love typography!_
 
@@ -28,14 +28,14 @@ So now you can do the process-heavy inefficiencies of enterprises as a single de
 
 ## Intelligence disclaimer
 
-Before we go into the experiment I did, let's set some things straight: artificial intelligence is, in fact, not intelligence. It is statistics on steroids. That's not something inherently bad, and there are a lot of use cases for it; just please stop assuming it understands _things_.
+Before we go into the experiment I did, let's set some things straight: artificial intelligence is, in fact, not intelligence. It is statistics on steroids. That's not something inherently bad, and there are a lot of use cases for it; just please stop assuming it _understands_ things.
 Also, it has no consciousness, even when the “Trust Me Bro” tech CEOs like from Anthropic are gooning about it at night:
 
 !["Breaking: Anthropic CEO says Claude may or may not have gained consciousness, as the model has begun showing symptoms of anxiety."](/assets/posts/anthropic-ceo-lost-consciousness.png)
 
 Please stop assigning living, breathing, human traits to things, which they are not.
 
-It just predicts the most likely next token, which, again, can be good enough, especially as most software seems to run on that principle anyway nowadays, but it can also go horribly wrong:
+LLMs just predict the most likely next token, which, again, can be good enough, especially as most software seems to run on that principle anyway nowadays, but it can also go horribly wrong:
 
 !["Claude Code wiped our production database with a Terraform command. It took down the DataTalksClub course platform and 2.5 years of submissions: homework, projects, and leaderboards. Automated snapshots were gone too. In the new newsletter, I wrote the full timeline + what I changed so this doesn't happen again. If you use Terraform (or let agents touch infra), this is a good story for you to read."](/assets/posts/claude-code-wiped-production.png)
 
@@ -45,11 +45,11 @@ _(Coincidentally enough, I collected both of these two screenshots within hours 
 
 There have been a lot of vibe-coded demos by creating new greenfield applications, which, in my opinion, is already the first problem, because the world runs on brownfield software.
 
-Therefore, I took an application of my own and let Claude Code steer the wheel. The application in question is of simple to medium complexity that I use for invoicing, time tracking, etc., which I wrote when I founded my company (because why would you buy software when you can write it yourself, right? RIGHT?).
+Therefore, I took an application of my own and let Claude Code steer the wheel. The application in question is of simple to medium complexity that I use for invoicing, time tracking, etc., which I wrote when I founded my company back in 2019 (because why would you buy software when you can write it yourself, right? RIGHT?).
 
 Anyhow, it's about seven years old, and while it got some maintenance in the past years, it could need some love. The tech stack consists of **.NET, ASP.NET Core, EF Core, Angular etc**. So time for some technical upgrades! (a use case that probably a lot of companies out there have)
 
-For this experiment, I resorted to using **[OpenSpec](https://github.com/Fission-AI/OpenSpec)** as a lightweight spec framework. I would also recommend setting up **[serena](https://github.com/oraios/serena)**, which is an MCP server that enhances your LLM with tools for querying code (just like in an IDE) by utilizing language servers to save tokens.
+For this experiment, I resorted to using **[OpenSpec](https://github.com/Fission-AI/OpenSpec)** as a lightweight specification framework. I would also recommend setting up **[serena](https://github.com/oraios/serena)**, which is an MCP server that enhances your LLM with tools for querying code (just like in an IDE) by utilizing language servers to save tokens.
 
 I'll skip detailed instructions here, as this post is about results and not how-to, but I recommend checking out the [live streams](https://www.youtube.com/playlist?list=PLw0jj21rhfkNPdETKsoyPEbKkZpCpB4Gh) [Dylan Beattie](https://dylanbeattie.net/) and [Emmz Rendle](https://rendle.dev/) have been doing.
 
@@ -92,11 +92,11 @@ After the initial struggles, this one kept me motivated to continue the experime
 
 ### `Microsoft.AspNetCore.ApiAuthorization.IdentityServer` / `Duende.IdentityServer` → `OpenIddict`
 
-This one scared me the most, simply because it is complex, and not gonna lie, this would have taken me a long time to do. That’s why I was all the more surprised that Claude executed this change mostly flawlessly. It took only two iterations of “Hey, this does not work; here is the error message” to actually make this one work.
+This one scared me the most, simply because it is complex, and not gonna lie, this would have taken _me_ a long time to do. That’s why I was all the more surprised that Claude executed this change pretty good, except for the fact, that I had to interfere very early in the implementation part, because Claude went for v5 of `OpenIddict` (from 2024) instead of v7. After that it took only two iterations of “Hey, this does not work; here is the error message” to actually make this one work. That was a pleasant surprise!
 
 I’m confident that this would have taken me more time to do this migration than what the LLM spent.
 
-The main downside of this one is security-related: I have no idea if the changes that were made are actually still secure. They certainly look secure, but as I had almost zero involvement, I could not verify that. The upside here is that I’m the only user and the application only runs on demand (and only locally), so it is no disaster. Theoretically, this application could even do without a login.
+The main downside of this one is security-related: I have no idea if the changes that were made are actually still secure. Also the fact that it reached for an old version of `OpenIddict` concerns me deeply. The implementation certainly looks secure, but as I had almost zero involvement, I could not verify that. The upside here is that I’m the only user and the application only runs on demand (and only locally), so in my case it is no disaster. Theoretically, this application could even do without a login.
 
 ### `Angular 18` → `Angular 21`
 
@@ -108,7 +108,7 @@ Bootstrap seems to had breaking changes in minor versions again (`5.0.2` → `5.
 
 Furthermore, Claude botched the upgrade of the markdown editor I was using. I was asked if a different library would be okay, to which I obliged, but in the end, the editor was just left commented out, resulting in no editor at all.
 
-As usual, there were some quality issues, leftover files and things that were not used any more.
+As usual, there were some quality issues like not using the latest version of the packages and a lot of leftover files and things that were not used any more.
 
 ### `Angular Standalone Components` & `Angular Signals & Zoneless`
 
@@ -123,6 +123,8 @@ As initially mentioned, a lot of things were missed during the requirements gath
 - New C# features (`ImplicitUsings`, file-scoped namespaces etc.)
 - Better package manager
 - General more clean-up (just a lot of leftovers that were not used at all/anymore)
+
+As I specifically asked for refactoring and modernization efforts, those things should have come up in the discovery phase.
 
 ## Bonus: a customer application
 
@@ -142,7 +144,7 @@ I have to agree, LLMs got a lot better at doing coding work since the last time 
 
 All in all, I, however, cannot support claims like 5–7 hours of “autonomous capacity”, as I have seen these days online. The whole workflow still required a lot of intervention in my experiments. Subagents may be part of the answer here, though.
 
-Furthermore, the overall code quality and just dead stuff left behind are still a big problem. Some have already called for that _code_ quality will not matter that much anymore with more autonomous development workflows. It remains to be seen if this will actually be the case. So far, I have been cleaning up after Claude like after an intern. At the moment it is a lot of _LGTM_ (Looks good to me) energy — as reviewed by Claude itself.
+Furthermore, the overall code quality, not using the latest versions of packages and just dead stuff left behind are still a big problem. Some have already called for that _code_ quality will not matter that much anymore with more autonomous development workflows. It remains to be seen if this will actually be the case. So far, I have been cleaning up after Claude like after an intern. At the moment it is a lot of _LGTM_ (Looks good to me) energy — as reviewed by Claude itself.
 
 _Author's note: no LLMs have been harmed in the creation of this blog post._
 
