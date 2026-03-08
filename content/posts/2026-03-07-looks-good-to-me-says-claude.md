@@ -80,7 +80,7 @@ In my opinion it is also quite funny that the LLM that wrote the code finds issu
 
 ### `Microsoft.AspNetCore.SpaServices.Extensions` → `Microsoft.AspNetCore.SpaProxy`
 
-This one was the start, and it horribly failed in multiple ways. In all fairness, in the end Claude was able to fix it, but it took many, Many, MANY iterations, burning through tokens. It took 2-3 “sessions” (read: till Anthropic decides you used enough tokens) to actually solve this one, and I had to crank up the model Opus 4.6 with intensive thinking, burning even more tokens.
+This one was the start, and it horribly failed in multiple ways. In all fairness, in the end Claude was able to fix it, but it took many, Many, MANY iterations, burning through tokens. It took 2-3 “sessions” (read: till Anthropic decides you used enough tokens) to actually solve this one, and I had to crank up the model to Opus 4.6 with intensive thinking, burning even more tokens.
 
 The problem was that the `SpaProxy` simply works differently out-of-the-box by not proxying but actually forwarding to the Angular application. So different URLs (because different ports), the backend was on `HTTPS`, frontend only on `HTTP`, because there was no setup for `HTTPS`, resulting in all kinds of CORS errors and configuration issues. And as LLMs are good at creating what is likely correct, that is not something that works very well with configuration that simply **needs** to be correct.
 
@@ -100,7 +100,7 @@ The main downside of this one is security-related: I have no idea if the changes
 
 ### `Angular 18` → `Angular 21`
 
-There were a couple of issues again. Details were missed again during the specification creation because while I mentioned during the discovery phase that I wanted to migrate the test runner to `vitest` (new default in Angular 21), I did not specify that I also wanted to migrate to the new Angular build system (which I implicitly assumed should be part of an `Angular 18` → `Angular 21` 21 migration). In comparison to other things that were explicitly mentioned as non-goals, this one didn’t seem to be a concern at all.
+There were a couple of issues again. Details were missed again during the specification creation because while I mentioned during the discovery phase that I wanted to migrate the test runner to `vitest` (new default in Angular 21), I did not specify that I also wanted to migrate to the new Angular build system (which I implicitly assumed should be part of an `Angular 18` → `Angular 21` migration). In comparison to other things that were explicitly mentioned as non-goals, this one didn’t seem to be a concern at all.
 
 Furthermore, it broke two features, both resulting from package upgrades during the change.
 
