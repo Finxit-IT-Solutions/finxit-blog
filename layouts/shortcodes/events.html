@@ -1,0 +1,20 @@
+{{ $currentYear := "" }}
+{{ range sort site.Data.events "date" "desc" }}
+  {{ $parts := split .date " - " }}
+  {{ $year := substr (index $parts 0) 0 4 }}
+  {{ if ne $year $currentYear }}
+    {{ $currentYear = $year }}
+<h3>{{ $year }}</h3>
+  {{ end }}
+<div class="event-entry">
+  <div class="event-date">
+    <span>{{ index $parts 0 }}</span>
+    {{ if gt (len $parts) 1 }}<span class="event-date-separator">-</span><span>{{ index $parts 1 }}</span>{{ end }}
+  </div>
+  <div class="event-details">
+    <strong>{{ .event }}</strong><br>
+    {{ .talk }}<br>
+    <span class="meta">{{ .location }} {{ partial "flag" .country }}</span>
+  </div>
+</div>
+{{ end }}

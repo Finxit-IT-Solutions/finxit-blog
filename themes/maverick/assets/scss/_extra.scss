@@ -1,0 +1,23 @@
+.event-entry {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.event-date {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    color: #777;
+}
+
+.event-date-separator {
+    text-align: center;
+}
+
+.event-details {
+    flex: 1;
+}

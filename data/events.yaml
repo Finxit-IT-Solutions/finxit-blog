@@ -1,0 +1,71 @@
+- date: 2023-09-22 - 2023-09-23
+  event: SoCraTes Austria
+  talk: "ChatGPT - Beyond the hype / ArchUnit - Test your Software Architecture"
+  location: Linz, Austria
+  country: AT
+
+- date: 2023-12-19
+  event: .NET Community Austria Meetup
+  talk: "High Performance Logging in .NET"
+  location: Vienna, Austria
+  country: AT
+
+- date: 2024-09-20 - 2024-09-21
+  event: SoCraTes Austria
+  talk: "How NOT to modernise you legacy application / An Introduction into OpenTelemetry"
+  location: Linz, Austria
+  country: AT
+
+- date: 2025-05-10
+  event: Global Azure Austria 2025
+  talk: "Your Build Pipeline Needs a Notary: Surviving Code Signing in 2025"
+  location: Pasching, Austria
+  country: AT
+
+- date: 2025-05-20
+  event: Cloud Native Linz
+  talk: "CloudEvents - One Standard to rule them all!"
+  location: Linz, Austria
+  country: AT
+
+- date: 2025-06-19 - 2025-06-20
+  event: Voxxed Days Luxembourg
+  talk: "What comes after Git?"
+  location: Mondorf-les-Bains, Luxembourg
+  country: LU
+
+- date: 2025-09-26 - 2025-09-27
+  event: SoCraTes Austria
+  talk: "What comes after Git? / Conferences, Speaking and everything in-between / Let's build an operating system"
+  location: Linz, Austria
+  country: AT
+
+- date: 2025-10-06 - 2025-10-10
+  event: Devoxx Belgium
+  talk: "What comes after Git?"
+  location: Antwerpen, Belgium
+  country: BE
+
+- date: 2026-01-29 - 2026-02-01
+  event: SoCraTes Switzerland
+  talk: "What comes after Git? / Conferences, Speaking and everything in-between / Let's build an operating system"
+  location: Ilanz, Switzerland
+  country: CH
+
+- date: 2026-06-17 - 2026-06-19
+  event: Devoxx Poland
+  talk: "What Comes After Git?"
+  location: Kraków, Poland
+  country: PL
+
+- date: 2026-06-29 - 2026-07-02
+  event: DWX 26
+  talk: "What Comes After Git?"
+  location: Mannheim, Germany
+  country: DE
+
+- date: 2026-09-29 - 2026-09-30
+  event: Cloud Native Days Austria 2026
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Vienna, Austria
+  country: AT

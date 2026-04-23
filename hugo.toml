@@ -80,6 +80,11 @@ theme = 'maverick'
     name = "Posts"
     url = "/posts/"
     weight = -200
+  [[menu.main]]
+    identifier = "events"
+    name = "Events"
+    url = "/events/"
+    weight = -150
 
 [markup]
   [markup.goldmark.renderer]
