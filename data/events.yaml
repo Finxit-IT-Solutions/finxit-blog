@@ -63,6 +63,12 @@
   location: Kraków, Poland
   country: PL
 
+- date: 2026-06-25
+  event: Technologieplauscherl 93
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Linz, Austria
+  country: AT
+
 - date: 2026-06-29 - 2026-07-02
   event: DWX 26
   talk: "What Comes After Git?"
