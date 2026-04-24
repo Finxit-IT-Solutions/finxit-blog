@@ -1,16 +1,19 @@
 {{ $currentYear := "" }}
 {{ range sort site.Data.events "date" "desc" }}
   {{ $parts := split .date " - " }}
-  {{ $year := substr (index $parts 0) 0 4 }}
+  {{ $start := time.AsTime (index $parts 0) }}
+  {{ $year := $start.Format "2006" }}
   {{ if ne $year $currentYear }}
     {{ $currentYear = $year }}
 <h3>{{ $year }}</h3>
   {{ end }}
+  {{ $dateLabel := $start.Format "02. Jan" }}
+  {{ if gt (len $parts) 1 }}
+    {{ $end := time.AsTime (index $parts 1) }}
+    {{ $dateLabel = printf "%s – %s" ($start.Format "02. Jan") ($end.Format "02. Jan") }}
+  {{ end }}
 <div class="event-entry">
-  <div class="event-date">
-    <span>{{ index $parts 0 }}</span>
-    {{ if gt (len $parts) 1 }}<span class="event-date-separator">-</span><span>{{ index $parts 1 }}</span>{{ end }}
-  </div>
+  <div class="event-date">{{ $dateLabel }}</div>
   <div class="event-details">
     <strong>{{ .event }}</strong><br>
     {{ .talk }}<br>

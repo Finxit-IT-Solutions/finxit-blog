@@ -7,15 +7,10 @@
 
 .event-date {
     flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
+    min-width: 8rem;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
     color: #777;
-}
-
-.event-date-separator {
-    text-align: center;
 }
 
 .event-details {
