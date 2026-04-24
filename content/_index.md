@@ -5,8 +5,8 @@
 
 Hey, I'm Christian, a Freelance Software Engineer and Software Architect, from Linz, Austria 🇦🇹. I do all sorts of stuff with computers, you know those things with the code and the bits and the blinking light.
 
-I'm also a regular speaker at conferences, meetups and community events. Check [here](/events) to catch me at an event near you! Our join us at the [.NET Meetup](https://dotnetstammtisch.at/) in Linz, that I'm hosting.
+I'm also a regular speaker at conferences, meetups and community events. Check [here](/events) to catch me at an event near you! Or join us at the [.NET Meetup](https://dotnetstammtisch.at/) in Linz, which I host.
 
 In this blog, I share my experiences while helping my customers. Or I'm just fiddling around with new shiny tech stuff. Sometimes both at the same time.
 
-<a href="/atom.xml">RSS Feed</a>
+<a href="/atom.xml">Subscribe via RSS</a>
