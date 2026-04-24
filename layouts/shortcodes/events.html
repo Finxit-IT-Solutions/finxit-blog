@@ -15,6 +15,11 @@
     <strong>{{ .event }}</strong><br>
     {{ .talk }}<br>
     <span class="meta">{{ .location }} {{ partial "flag" .country }}</span>
+    {{ with .recording }}
+    <div class="event-recording-row">
+      <a class="event-recording" href="{{ . }}" target="_blank" rel="noopener">▶ Watch recording</a>
+    </div>
+    {{ end }}
   </div>
 </div>
 {{ end }}

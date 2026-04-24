@@ -9,6 +9,7 @@
   talk: "High Performance Logging in .NET"
   location: Vienna, Austria
   country: AT
+  recording: https://www.youtube.com/live/8n-NC6LOLNs?si=9bRiuJD_haNiMLwL&t=1042
 
 - date: 2024-09-20 - 2024-09-21
   event: SoCraTes Austria
@@ -21,18 +22,21 @@
   talk: "Your Build Pipeline Needs a Notary: Surviving Code Signing in 2025"
   location: Pasching, Austria
   country: AT
+  recording: https://www.youtube.com/watch?v=GNdwd7zhpBg&t=540s
 
 - date: 2025-05-20
   event: Cloud Native Linz
   talk: "CloudEvents - One Standard to rule them all!"
   location: Linz, Austria
   country: AT
+  recording: https://www.youtube.com/watch?v=VMRse7AtE5M&
 
 - date: 2025-06-19 - 2025-06-20
   event: Voxxed Days Luxembourg
   talk: "What comes after Git?"
   location: Mondorf-les-Bains, Luxembourg
   country: LU
+  recording: https://www.youtube.com/watch?v=61ev0Qk2CWw
 
 - date: 2025-09-26 - 2025-09-27
   event: SoCraTes Austria
@@ -45,6 +49,7 @@
   talk: "What comes after Git?"
   location: Antwerpen, Belgium
   country: BE
+  recording: https://www.youtube.com/watch?v=eIVEqy7Zp6A
 
 - date: 2026-01-29 - 2026-02-01
   event: SoCraTes Switzerland
