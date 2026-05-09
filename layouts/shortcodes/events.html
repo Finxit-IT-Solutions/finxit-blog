@@ -1,5 +1,5 @@
 {{ $currentYear := "" }}
-{{ range sort site.Data.events "date" "desc" }}
+{{ range sort hugo.Data.events "date" "desc" }}
   {{ $parts := split .date " - " }}
   {{ $start := time.AsTime (index $parts 0) }}
   {{ $year := $start.Format "2006" }}

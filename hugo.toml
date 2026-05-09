@@ -1,5 +1,5 @@
 baseURL = 'https://blog.finxit.at/'
-languageCode = 'en-uk'
+locale = 'en-uk'
 title = 'Finxit IT Solutions Blog'
 theme = 'maverick'
 
