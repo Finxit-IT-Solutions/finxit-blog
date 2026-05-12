@@ -69,6 +69,12 @@
   location: Linz, Austria
   country: AT
 
+- date: 2026-09-25 - 2026-09-26
+  event: SoCraTes Austria
+  talk: "TBA"
+  location: Linz, Austria
+  country: AT
+
 - date: 2026-06-29 - 2026-07-02
   event: DWX 26
   talk: "What Comes After Git?"
