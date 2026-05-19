@@ -63,23 +63,29 @@
   location: Kraków, Poland
   country: PL
 
+- date: 2026-06-18 - 2026-06-19
+  event: Working Software
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Reggio nell'Emilia, Italy
+  country: IT
+
 - date: 2026-06-25
   event: Technologieplauscherl 93
   talk: "CRAcking Compliance - The EU Cyber Resilience Act"
   location: Linz, Austria
   country: AT
 
+- date: 2026-06-29 - 2026-07-02
+  event: DWX
+  talk: "What Comes After Git? | Use promo code / voucher DWX26_Schabetsberger_10"
+  location: Mannheim, Germany
+  country: DE
+
 - date: 2026-09-25 - 2026-09-26
   event: SoCraTes Austria
   talk: "TBA"
   location: Linz, Austria
   country: AT
-
-- date: 2026-06-29 - 2026-07-02
-  event: DWX 26
-  talk: "What Comes After Git? | Use promo code / voucher DWX26_Schabetsberger_10"
-  location: Mannheim, Germany
-  country: DE
 
 - date: 2026-09-29 - 2026-09-30
   event: Cloud Native Days Austria 2026
