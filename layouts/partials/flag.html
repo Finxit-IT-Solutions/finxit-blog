@@ -1,22 +1,8 @@
-{{- $flags := dict
-  "AT" "🇦🇹"
-  "DE" "🇩🇪"
-  "CH" "🇨🇭"
-  "US" "🇺🇸"
-  "GB" "🇬🇧"
-  "FR" "🇫🇷"
-  "IT" "🇮🇹"
-  "ES" "🇪🇸"
-  "NL" "🇳🇱"
-  "BE" "🇧🇪"
-  "CZ" "🇨🇿"
-  "PL" "🇵🇱"
-  "SE" "🇸🇪"
-  "NO" "🇳🇴"
-  "DK" "🇩🇰"
-  "FI" "🇫🇮"
-  "PT" "🇵🇹"
-  "IE" "🇮🇪"
-  "LU" "🇱🇺"
--}}
-{{- index $flags (. | upper) | default "" -}}
+{{- $country := . }}
+{{- $path := printf "flag-icons/flags/4x3/%s.svg" (lower $country) }}
+{{- with resources.Get $path }}
+<img src="{{ .RelPermalink }}" width="{{ string site.Params.flags.width }}"
+  height="{{ string site.Params.flags.height }}" alt="{{ printf " country flag for %s" $country }}">
+{{- else }}
+{{- errorf "Unable to find %s" $path }}
+{{- end -}}

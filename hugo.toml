@@ -10,6 +10,14 @@ theme = 'maverick'
   [module.imports]
     path = "github.com/privatemaker/headless-cms"
 
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+
+[[module.mounts]]
+  source = 'node_modules/flag-icons/'
+  target = 'assets/flag-icons'
+
 [params]
   logo = '/assets/favicon.ico'
   description = "Blog of Christian Schabetsberger, a Freelance Software Engineer & Software Architect, sharing his experiences at Finxit IT Solutions."
@@ -20,6 +28,11 @@ theme = 'maverick'
     enabled = false
     githubRepo = 'Finxit-IT-Solutions/finxit-blog'
     theme = 'github-light'
+
+  [params.flags]
+    # Aspect ratio must be 4:3
+    width = 16
+    height = 12
 
   [params.headless_cms]
     engine = "sveltia"
