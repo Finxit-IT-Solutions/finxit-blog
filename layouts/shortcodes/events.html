@@ -21,9 +21,9 @@
 <div class="event-entry{{ if eq $i $lastUpcoming }} event-entry--divider{{ end }}{{ if $ongoing }} event-entry--ongoing{{ end }}">
   <div class="event-date">{{ partial "event-date-label" $event.date }}</div>
   <div class="event-details">
-    <strong>{{ $event.event }}</strong>{{ if $ongoing }} <span class="event-badge">Now</span>{{ end }}<br>
+    <strong>{{ with $event.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $event.event }}</a>{{ else }}{{ $event.event }}{{ end }}</strong>{{ if $ongoing }} <span class="event-badge">Now</span>{{ end }}<br>
     {{ $event.talk }}<br>
-    <span class="meta">{{ $event.location }} {{ partial "flag" $event.country }}</span>
+    <span class="meta"><a href="https://www.openstreetmap.org/search?query={{ $event.location | urlquery }}" target="_blank" rel="noopener">{{ $event.location }}</a> {{ partial "flag" $event.country }}</span>
     {{ with $event.recording }}
     <div class="event-recording-row">
       <a class="event-recording" href="{{ . }}" target="_blank" rel="noopener">▶ Watch recording</a>

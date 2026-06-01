@@ -53,6 +53,15 @@ $event-accent-bg: #fdf3e0;
     flex: 1;
 }
 
+.event-details strong a,
+.event-details .meta a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .event-recording-row {
     margin-top: 0.5rem;
 }
