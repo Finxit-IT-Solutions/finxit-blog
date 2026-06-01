@@ -1,0 +1,7 @@
+{{- /* Returns the end time of an event given its "start" or "start - end" date string. */ -}}
+{{- $parts := split . " - " -}}
+{{- $end := index $parts 0 -}}
+{{- if gt (len $parts) 1 -}}
+  {{- $end = index $parts 1 -}}
+{{- end -}}
+{{- return (time.AsTime $end) -}}
