@@ -1,0 +1,8 @@
+{{- /* Returns the human-readable date label for an event's date string,
+       e.g. "17. Jun" or "17. Jun – 19. Jun". */ -}}
+{{- $dates := partial "event-dates" . -}}
+{{- $label := $dates.start.Format "02. Jan" -}}
+{{- if $dates.multiDay -}}
+  {{- $label = printf "%s – %s" $label ($dates.end.Format "02. Jan") -}}
+{{- end -}}
+{{- return $label -}}

@@ -1,0 +1,12 @@
+{{- /* Parses an event's "start" or "start - end" date string and returns a dict
+       with .start and .end as time.Time, plus .multiDay for the formatting. */ -}}
+{{- $parts := split . " - " -}}
+{{- $start := index $parts 0 -}}
+{{- $end := $start -}}
+{{- if gt (len $parts) 1 -}}
+  {{- $end = index $parts 1 -}}
+{{- end -}}
+{{- return (dict
+  "start" (time.AsTime $start)
+  "end" (time.AsTime $end)
+  "multiDay" (gt (len $parts) 1)) -}}

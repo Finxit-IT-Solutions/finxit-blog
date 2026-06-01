@@ -1,12 +1,44 @@
+$event-accent: #d4a85a;
+$event-accent-bg: #fdf3e0;
+
 .event-entry {
     display: flex;
     gap: 1.5rem;
     padding: 0.75rem 0;
     border-bottom: 1px dotted #ccc;
+
+    &--divider {
+        border-bottom: 2px solid $event-accent;
+    }
+
+    &--ongoing {
+        // Bleed the background into the gutter without shifting the row content,
+        // so the entry stays aligned with the others.
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background: $event-accent-bg;
+        border-radius: 4px;
+        border-bottom-color: transparent;
+        // Accent bar as an inset shadow so it adds no layout width and does not
+        // collide with the row's bottom border.
+        box-shadow: inset 3px 0 0 $event-accent;
+    }
 }
 
-.event-entry--divider {
-    border-bottom: 2px solid #d4a85a;
+.event-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    background: $event-accent;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
 }
 
 .event-date {
@@ -33,9 +65,9 @@
     font-size: 0.85rem;
     font-weight: 500;
     text-decoration: none;
-}
 
-.event-recording:hover {
-    background: #000;
-    color: #fff;
+    &:hover {
+        background: #000;
+        color: #fff;
+    }
 }

@@ -3,30 +3,25 @@
 
 {{ $lastUpcoming := -1 }}
 {{ range $i, $event := $events }}
-  {{ $end := partial "event-end" $event.date }}
-  {{ if not ($end.Before $now) }}
+  {{ $dates := partial "event-dates" $event.date }}
+  {{ if not ($dates.end.Before $now) }}
     {{ $lastUpcoming = $i }}
   {{ end }}
 {{ end }}
 
 {{ $currentYear := "" }}
 {{ range $i, $event := $events }}
-  {{ $parts := split $event.date " - " }}
-  {{ $start := time.AsTime (index $parts 0) }}
-  {{ $year := $start.Format "2006" }}
+  {{ $dates := partial "event-dates" $event.date }}
+  {{ $year := $dates.start.Format "2006" }}
   {{ if ne $year $currentYear }}
     {{ $currentYear = $year }}
 <h3>{{ $year }}</h3>
   {{ end }}
-  {{ $dateLabel := $start.Format "02. Jan" }}
-  {{ if gt (len $parts) 1 }}
-    {{ $end := time.AsTime (index $parts 1) }}
-    {{ $dateLabel = printf "%s – %s" $dateLabel ($end.Format "02. Jan") }}
-  {{ end }}
-<div class="event-entry{{ if eq $i $lastUpcoming }} event-entry--divider{{ end }}">
-  <div class="event-date">{{ $dateLabel }}</div>
+  {{ $ongoing := and (not ($dates.start.After $now)) (not ($dates.end.Before $now)) }}
+<div class="event-entry{{ if eq $i $lastUpcoming }} event-entry--divider{{ end }}{{ if $ongoing }} event-entry--ongoing{{ end }}">
+  <div class="event-date">{{ partial "event-date-label" $event.date }}</div>
   <div class="event-details">
-    <strong>{{ $event.event }}</strong><br>
+    <strong>{{ $event.event }}</strong>{{ if $ongoing }} <span class="event-badge">Now</span>{{ end }}<br>
     {{ $event.talk }}<br>
     <span class="meta">{{ $event.location }} {{ partial "flag" $event.country }}</span>
     {{ with $event.recording }}
