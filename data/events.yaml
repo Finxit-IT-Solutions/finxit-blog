@@ -87,6 +87,13 @@
   location: Mannheim, Germany
   country: DE
 
+- date: 2026-09-23
+  event: Technologieplauscherl 93
+  url: https://technologieplauscherl.at
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Linz, Austria
+  country: AT
+
 - date: 2026-09-25 - 2026-09-26
   event: SoCraTes Austria
   url: https://socrates-conference.at/
