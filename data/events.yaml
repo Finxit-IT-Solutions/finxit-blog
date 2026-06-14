@@ -101,6 +101,13 @@
   location: Vienna, Austria
   country: AT
 
+- date: 2026-10-26 - 2026-10-28
+  event: Techorama Netherlands
+  url: https://techorama.nl
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Utrecht, Netherlands
+  country: NL
+
 - date: 2026-11-04 - 2026-11-06
   event: Øredev
   url: https://oredev.org/
