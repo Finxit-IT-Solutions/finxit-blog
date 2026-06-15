@@ -28,7 +28,9 @@ $event-accent-bg: #fdf3e0;
 }
 
 .event-badge {
-    display: inline-block;
+    // Always present in the markup; shown only on ongoing entries, which are
+    // determined client-side (with a build-time fallback).
+    display: none;
     margin-left: 0.5rem;
     padding: 0.05rem 0.5rem;
     border-radius: 999px;
@@ -39,6 +41,10 @@ $event-accent-bg: #fdf3e0;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     vertical-align: middle;
+}
+
+.event-entry--ongoing .event-badge {
+    display: inline-block;
 }
 
 .event-date {

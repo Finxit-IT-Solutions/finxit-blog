@@ -1,6 +1,8 @@
 {{ $now := now }}
 {{ $events := sort hugo.Data.events "date" "desc" }}
 
+{{/* Build-time ongoing/divider state is rendered as a no-JS fallback; the
+     inline script below recomputes it from the visitor's clock on load. */}}
 {{ $lastUpcoming := -1 }}
 {{ range $i, $event := $events }}
   {{ $dates := partial "event-dates" $event.date }}
@@ -18,10 +20,10 @@
 <h3>{{ $year }}</h3>
   {{ end }}
   {{ $ongoing := and (not ($dates.start.After $now)) (not ($dates.end.Before $now)) }}
-<div class="event-entry{{ if eq $i $lastUpcoming }} event-entry--divider{{ end }}{{ if $ongoing }} event-entry--ongoing{{ end }}">
+<div class="event-entry{{ if eq $i $lastUpcoming }} event-entry--divider{{ end }}{{ if $ongoing }} event-entry--ongoing{{ end }}" data-event-start="{{ $dates.start.Format "2006-01-02" }}" data-event-end="{{ $dates.end.Format "2006-01-02" }}">
   <div class="event-date">{{ partial "event-date-label" $event.date }}</div>
   <div class="event-details">
-    <strong>{{ with $event.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $event.event }}</a>{{ else }}{{ $event.event }}{{ end }}</strong>{{ if $ongoing }} <span class="event-badge">Now</span>{{ end }}<br>
+    <strong>{{ with $event.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $event.event }}</a>{{ else }}{{ $event.event }}{{ end }}</strong> <span class="event-badge">Now</span><br>
     {{ $event.talk }}<br>
     <span class="meta"><a href="https://www.openstreetmap.org/search?query={{ $event.location | urlquery }}" target="_blank" rel="noopener">{{ $event.location }}</a> {{ partial "flag" $event.country }}</span>
     {{ with $event.recording }}
@@ -32,3 +34,41 @@
   </div>
 </div>
 {{ end }}
+
+<script>
+(function () {
+  // Parse a "YYYY-MM-DD" string as a local date at the start of that day.
+  function parseLocalDate(s) {
+    var p = s.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+
+  function update() {
+    var now = new Date();
+    var entries = document.querySelectorAll(".event-entry[data-event-start]");
+    // Entries are rendered newest-first, so the last one whose end is still in
+    // the future (or today) is the boundary between upcoming and past events.
+    var divider = null;
+
+    entries.forEach(function (el) {
+      var start = parseLocalDate(el.dataset.eventStart);
+      var end = parseLocalDate(el.dataset.eventEnd);
+      end.setHours(23, 59, 59, 999); // events run through the end of their last day
+
+      var ongoing = start <= now && now <= end;
+      el.classList.toggle("event-entry--ongoing", ongoing);
+      el.classList.remove("event-entry--divider");
+
+      if (end >= now) {
+        divider = el;
+      }
+    });
+
+    if (divider) {
+      divider.classList.add("event-entry--divider");
+    }
+  }
+
+  update();
+})();
+</script>
