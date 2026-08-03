@@ -1,0 +1,33 @@
+{{- $path := .Get "src" | default "images/avatar.png" -}}
+{{- $img := resources.Get $path -}}
+{{- if not $img -}}
+  {{- errorf "avatar shortcode: %q not found in assets" $path -}}
+{{- end -}}
+{{- $alt := .Get "alt" | default site.Params.author -}}
+
+{{/* Rendered at 200px on desktop and up to 220px on mobile, so 1x/2x/3x variants. */}}
+{{- $widths := slice 220 440 660 -}}
+{{- $webp := slice -}}
+{{- $png := slice -}}
+{{- range $widths -}}
+  {{- $w := . -}}
+  {{- $webp = $webp | append (printf "%s %dw" ($img.Fill (printf "%dx%d webp q80 Center" $w $w)).RelPermalink $w) -}}
+  {{- $png = $png | append (printf "%s %dw" ($img.Fill (printf "%dx%d png Center" $w $w)).RelPermalink $w) -}}
+{{- end -}}
+{{- $fallback := $img.Fill "440x440 png Center" -}}
+{{- $sizes := "(min-width: 40rem) 200px, min(45vw, 200px)" -}}
+
+<picture>
+  <source type="image/webp" srcset="{{ delimit $webp ", " }}" sizes="{{ $sizes }}">
+  <img
+    class="avatar"
+    src="{{ $fallback.RelPermalink }}"
+    srcset="{{ delimit $png ", " }}"
+    sizes="{{ $sizes }}"
+    width="{{ $fallback.Width }}"
+    height="{{ $fallback.Height }}"
+    alt="{{ $alt }}"
+    decoding="async"
+    fetchpriority="high"
+  />
+</picture>

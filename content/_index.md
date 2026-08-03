@@ -1,7 +1,6 @@
 ## Hi there! 👋
 
-<img class="avatar" src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=Blonde&clotheType=Hoodie&clotheColor=Heather&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light'
-/>
+{{< avatar alt="Christian Schabetsberger" >}}
 
 Hey, I'm Christian, a Freelance Software Engineer and Software Architect, from Linz, Austria 🇦🇹. I do all sorts of stuff with computers, you know those things with the code and the bits and the blinking light.
 

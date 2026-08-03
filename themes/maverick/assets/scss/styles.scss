@@ -241,13 +241,34 @@ img {
     display: inline;
 }
 
+// The avatar shortcode is emitted inside a <picture>, which markdown in turn
+// wraps in a <p>. Both wrappers step out of the way so the image itself can
+// float and center.
+p:has(> picture > .avatar),
+picture:has(> .avatar) {
+    display: contents;
+}
+
 .avatar {
-    height: 120px;
-    width: 120px;
-    position: relative;
-    margin: -10px 0 0 15px;
-    float: right;
+    display: block;
+    width: clamp(150px, 45vw, 200px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 50%;
+    // Mobile: centered above the intro text.
+    margin: 0 auto 1.5rem;
+}
+
+// From tablet up there is room to wrap the text around it.
+@media (min-width: 40rem) {
+    .avatar {
+        width: 200px;
+        float: right;
+        margin: -3.25rem 0 1rem 1.75rem;
+        shape-outside: circle(50%);
+        shape-margin: 1rem;
+    }
 }
 
 table {
