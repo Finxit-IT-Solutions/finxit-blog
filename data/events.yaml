@@ -109,6 +109,13 @@
   location: Vienna, Austria
   country: AT
 
+- date: 2026-10-05 - 2026-10-09
+  event: Devoxx Belgium
+  url: https://devoxx.be/
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Antwerpen, Belgium
+  country: BE
+
 - date: 2026-10-26 - 2026-10-28
   event: Techorama Netherlands
   url: https://techorama.nl
