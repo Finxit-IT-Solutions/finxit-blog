@@ -136,3 +136,10 @@
   talk: "CRAcking Compliance - The EU Cyber Resilience Act"
   location: Prague, Czechia
   country: CZ
+
+- date: 2026-12-02 - 2026-12-04
+  event: Build Stuff
+  url: https://buildstuff.events/
+  talk: "What Comes After Git?"
+  location: Vilnius, Lithuania
+  country: LT
