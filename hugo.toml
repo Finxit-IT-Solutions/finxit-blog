@@ -15,7 +15,7 @@ theme = 'maverick'
   target = 'assets'
 
 [[module.mounts]]
-  source = 'node_modules/flag-icons/'
+  source = 'node_modules/.pnpm/flag-icons@7.5.0/node_modules/flag-icons/'
   target = 'assets/flag-icons'
 
 [params]
