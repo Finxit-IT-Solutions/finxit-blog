@@ -150,3 +150,10 @@
   talk: "What Comes After Git?"
   location: Vilnius, Lithuania
   country: LT
+
+- date: 2027-01-25 - 2027-01-29
+  event: NDC London
+  url: https://ndclondon.com/
+  talk: "What Comes After Git?"
+  location: London, United Kingdom
+  country: UK
