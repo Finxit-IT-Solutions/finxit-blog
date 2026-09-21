@@ -26,6 +26,11 @@
     <strong>{{ with $event.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $event.event }}</a>{{ else }}{{ $event.event }}{{ end }}</strong> <span class="event-badge">Now</span><br>
     {{ $event.talk }}<br>
     <span class="meta"><a href="https://www.openstreetmap.org/search?query={{ $event.location | urlquery }}" target="_blank" rel="noopener">{{ $event.location }}</a> {{ partial "flag" $event.country }}</span>
+    {{ if and $event.discount (not ($dates.end.Before $now)) }}
+    <div class="event-discount-row">
+      Use discount code <code>{{ $event.discount }}</code>
+    </div>
+    {{ end }}
     {{ with $event.recording }}
     <div class="event-recording-row">
       <a class="event-recording" href="{{ . }}" target="_blank" rel="noopener">▶ Watch recording</a>
