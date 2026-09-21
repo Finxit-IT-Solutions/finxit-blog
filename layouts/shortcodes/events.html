@@ -28,7 +28,12 @@
     <span class="meta"><a href="https://www.openstreetmap.org/search?query={{ $event.location | urlquery }}" target="_blank" rel="noopener">{{ $event.location }}</a> {{ partial "flag" $event.country }}</span>
     {{ if and $event.discount (not ($dates.end.Before $now)) }}
     <div class="event-discount-row">
-      Use discount code <code>{{ $event.discount }}</code>
+      Use discount code <code class="discount-code">{{ $event.discount }}</code>
+      <button type="button" class="discount-copy" data-copy="{{ $event.discount }}" aria-label="Copy discount code">
+        <svg class="discount-copy-icon discount-copy-icon--copy" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <svg class="discount-copy-icon discount-copy-icon--check" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="discount-copy-label">Copy</span>
+      </button>
     </div>
     {{ end }}
     {{ with $event.recording }}
@@ -75,5 +80,50 @@
   }
 
   update();
+
+  function copyDiscountCode(button) {
+    var code = button.dataset.copy;
+    var label = button.querySelector(".discount-copy-label");
+    var reset = function () {
+      label.textContent = "Copy";
+      button.classList.remove("discount-copy--copied");
+    };
+    var showCopied = function () {
+      label.textContent = "Copied!";
+      button.classList.add("discount-copy--copied");
+      clearTimeout(button._resetTimer);
+      button._resetTimer = setTimeout(reset, 2500);
+    };
+
+    var copyViaExecCommand = function () {
+      var textarea = document.createElement("textarea");
+      textarea.value = code;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showCopied();
+      } catch (e) {
+        // Ignore; nothing we can do without clipboard access.
+      }
+      document.body.removeChild(textarea);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      // Some contexts (e.g. an unfocused document) reject the Clipboard API
+      // even though it's present, so fall back to execCommand on rejection.
+      navigator.clipboard.writeText(code).then(showCopied, copyViaExecCommand);
+    } else {
+      copyViaExecCommand();
+    }
+  }
+
+  document.querySelectorAll(".discount-copy").forEach(function (button) {
+    button.addEventListener("click", function () {
+      copyDiscountCode(button);
+    });
+  });
 })();
 </script>

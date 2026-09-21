@@ -72,6 +72,56 @@ $event-accent-bg: #fdf3e0;
     margin-top: 0.5rem;
 }
 
+.discount-code {
+    user-select: all;
+}
+
+.discount-copy {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    gap: 0.3rem;
+    padding: 0.05rem 0.55rem;
+    border: 1px solid #000;
+    border-radius: 999px;
+    background: none;
+    color: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.5;
+    cursor: pointer;
+
+    &:hover {
+        background: #000;
+        color: #fff;
+    }
+
+    &--copied {
+        border-color: $event-accent;
+        background: $event-accent;
+        color: #fff;
+    }
+}
+
+.discount-copy-icon {
+    flex: none;
+
+    &--check {
+        display: none;
+    }
+}
+
+.discount-copy--copied {
+    .discount-copy-icon--copy {
+        display: none;
+    }
+
+    .discount-copy-icon--check {
+        display: block;
+    }
+}
+
 .event-recording-row {
     margin-top: 0.5rem;
 }
