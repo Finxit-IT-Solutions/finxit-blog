@@ -90,7 +90,7 @@
 
 - date: 2026-09-14 - 2026-09-15
   event: Code Europe
-  url: https://codeeurope.pl
+  url: https://codeeurope.pl/
   talk: "CRAcking Compliance - The EU Cyber Resilience Act"
   location: Warsaw, Poland
   country: PL
@@ -141,10 +141,17 @@
 
 - date: 2026-11-12 - 2026-11-13
   event: Update Conference Prague
-  url: https://prague.updateconference.net
+  url: https://prague.updateconference.net/
   talk: "CRAcking Compliance - The EU Cyber Resilience Act"
   location: Prague, Czechia
   country: CZ
+
+- date: 2026-11-19
+  event: Techplauscherl
+  url: https://www.technologieplauscherl.at/
+  talk: "CRAcking Compliance - The EU Cyber Resilience Act"
+  location: Linz, Austria
+  country: AT
 
 - date: 2026-12-02 - 2026-12-04
   event: Build Stuff
