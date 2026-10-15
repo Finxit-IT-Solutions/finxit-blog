@@ -169,3 +169,10 @@
   talk: "What Comes After Git?"
   location: London, United Kingdom
   country: GB
+
+- date: 2027-02-19
+  event: Voxxed Days Ticino
+  url: https://vdt26.voxxeddays.ch
+  talk: "What Comes After Git?"
+  location: Lugano, Switzerland
+  country: CH
